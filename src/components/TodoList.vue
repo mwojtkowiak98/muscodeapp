@@ -2,7 +2,7 @@
 	<div id="grid-item-1">
 		<div id="todo-title-container">
 			<h2>Lista todo</h2>
-			<h2>Wykonane: {{count()}}</h2>
+			<h2>Wykonane: {{counter}}</h2>
 		</div>
 		<ul>
 			<li v-for="(todo, index) in todos" :key="index" @click="count">
@@ -48,12 +48,11 @@ export default {
 					this.counter ++;
 				}
 			});
-			return this.counter
 		},
 	},
 
-	//mounted() { this.count() },
-	//updated() { this.count() }
+	mounted() { this.count() },
+	updated() { this.count() }
 };
 </script>
 
