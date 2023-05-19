@@ -5,8 +5,8 @@
 			<h2>Wykonane: {{counter}}</h2>
 		</div>
 		<ul>
-			<li v-for="(todo, index) in todos" :key="index" @click="count">
-				<input id="svgCheck" type="checkbox" v-model="todo.done" />
+			<li v-for="(todo, index) in todos" :key="index">
+				<input id="svgCheck" type="checkbox" v-model="todo.done"/>
 				<span :class="{ done: todo.done }">{{ todo.text }}</span>
 				<label for="svgCheck"></label>
 			</li>
@@ -45,14 +45,16 @@ export default {
 			this.counter = 0;
 			this.todos.forEach(todo => {
 				if(todo.done === true){
-					this.counter ++;
+					this.counter += 1;
 				}
 			});
+			console.log(this.counter)
+			return this.counter
 		},
 	},
 
 	mounted() { this.count() },
-	updated() { this.count() }
+	beforeUpdate() { this.count() }
 };
 </script>
 
