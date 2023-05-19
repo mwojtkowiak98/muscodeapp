@@ -52,7 +52,7 @@ export default {
 		},
 	},
 
-	mounted() { this.count() },
+	//mounted() { this.count() },
 	//updated() { this.count() }
 };
 </script>
